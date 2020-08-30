@@ -17,7 +17,7 @@ function onSubmit(event) {
     if (username === '' || pass === '') {
         document.getElementById('formError').innerHTML= "Complete todos los campos";
     } else {
-        sessionStorage.setItem('loggedEmail', username);
+        localStorage.setItem('loggedEmail', username);
         window.location = 'inicio.html';
     }
 }
