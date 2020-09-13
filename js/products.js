@@ -16,7 +16,8 @@ function listadoDeProductos(array) {
     if (((minCount == undefined) || (minCount != undefined && parseInt(producto.cost) >= minCount && minCount >= 0)) &&
       ((maxCount == undefined) || (maxCount != undefined && parseInt(producto.cost) <= maxCount && maxCount >= 0))) {
 
-      contenido += `<div class="card mb-3" style=>
+      contenido += `<a href="product-info.html" class="list-group-item-action"> 
+      <div class="card mb-3" style=>
       <div class="row no-gutters">
         <div class="col-4">
           <img src="${producto.imgSrc}" class="img-thumbnail">
@@ -30,7 +31,9 @@ function listadoDeProductos(array) {
           </div>
         </div>
       </div>
-    </div>`
+    </div> 
+    </a>
+    `
 
     }
 

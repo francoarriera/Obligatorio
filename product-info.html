@@ -11,8 +11,11 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/comentarios.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/puntuacion.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -26,31 +29,91 @@
       <a class="py-2 d-none d-md-inline-block" style="color: white" id="mostrarUsuario"></a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        
+      </div>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Precio</dt>
+        <dd>
+          
+          <span id="moneda"></span>     <span id="productCost"></span>
+        
+        </dd>
+
+        <dt>Articulos vendidos</dt>
+        <dd>
+          <p id="vendidos"></p>
+        </dd>
+        
+
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="imagenesDelProducto">
+          </div>
+        </dd>
+      </dl>
+
+      <div>
+      <h4>Comentario</h4>
+      <div>
+
+        <div class="puntuacion">
+          <input id="radio1" type="radio" name="estrellas" value="5"
+              onclick="document.getElementById('valor').innerHTML='5'">
+  
+          <label for="radio1">★</label>
+  
+          <input id="radio2" type="radio" name="estrellas" value="4"
+              onclick="document.getElementById('valor').innerHTML='4'">
+  
+          <label for="radio2">★</label>
+  
+          <input id="radio3" type="radio" name="estrellas" value="3"
+              onclick="document.getElementById('valor').innerHTML='3'">
+  
+          <label for="radio3">★</label>
+  
+          <input id="radio4" type="radio" name="estrellas" value="2"
+              onclick="document.getElementById('valor').innerHTML='2'">
+  
+          <label for="radio4">★</label>
+  
+          <input id="radio5" type="radio" name="estrellas" value="1"
+              onclick="document.getElementById('valor').innerHTML='1'">
+  
+          <label for="radio5">★</label><br>
+        </div>
+  
+      </div>
+        <textarea id="cajacomentarios" placeholder="Escribe un comentario..."></textarea><br>
+        <button id="botón">Enviar</button><br><br>
+        <hr>
+        <br>
+        <br>
+
+      </div>
+      
+
+      <div class="container" id="coments"></div>
+
+
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
-  </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p class="float-right">
-        <a href="#">Volver arriba</a>
-      </p>
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div>
+  </main>
+  <div id="spinner-wrapper"><div class="lds-ring">
+  </div></div>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
