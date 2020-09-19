@@ -22,3 +22,8 @@ function onSubmit(event) {
     }
 }
 
+function cerrar(){
+    localStorage.clear()
+    window.location="index.html";
+}
+
