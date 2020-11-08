@@ -16,24 +16,47 @@ function listadoDeProductos(array) {
     if (((minCount == undefined) || (minCount != undefined && parseInt(producto.cost) >= minCount && minCount >= 0)) &&
       ((maxCount == undefined) || (maxCount != undefined && parseInt(producto.cost) <= maxCount && maxCount >= 0))) {
 
-      contenido += `<a href="product-info.html" class="list-group-item-action"> 
-      <div class="card mb-3" style=>
-      <div class="row no-gutters">
-        <div class="col-4">
-          <img src="${producto.imgSrc}" class="img-thumbnail">
-        </div>
-        <div class="col-8">
-          <div class="card-body">
-            <h3><b>${producto.name}</b></h3>
-            <h5>${producto.description}</h5><br>
-            <h4>${producto.currency} $${producto.cost}</h4>
-            <small>Artículos vendidos: ${producto.soldCount}</small>
-          </div>
+      contenido +=`
+  <div class="col-md-4">
+  <a href="product-info.html" class="list-group-item-action">
+    <div class="card mb-4 shadow-sm">
+    <img src="${producto.imgSrc}" class="img-thumbnail">
+      <div class="card-body">
+        <h3><b>${producto.name}</b></h3>
+        <h5>${producto.description}</h5><br>
+        <h4>${producto.currency} ${producto.cost}</h4>
+        
+        <div class="d-flex justify-content-between align-items-center">
+          <small>Artículos vendidos: ${producto.soldCount}</small>
         </div>
       </div>
-    </div> 
+    </div>
     </a>
-    `
+  </div>
+`
+
+
+    //     `<a href="product-info.html" class="list-group-item-action">
+    //     <div class="container">
+    
+    //         <div class="row no-gutters">
+    //             <div class="col-4">
+    //             <div class="card col-md-4">
+    //                 <img src="${producto.imgSrc}" class="img-thumbnail">
+    //             </div>
+    //             <div class="col-8">
+    //                 <div class="card-body">
+    //                     <h3><b>${producto.name}</b></h3>
+    //                     <h5>${producto.description}</h5><br>
+    //                     <h4>${producto.currency} $${producto.cost}</h4>
+    //                     <small>Artículos vendidos: ${producto.soldCount}</small>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     </div>
+    //     </div>
+    //     </a>
+    // `
 
     }
 
@@ -106,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     listadoDeProductos(productos);
   })
 
-  document.getElementById("clearFilter").addEventListener("click", function(){
+  document.getElementById("clearFilter").addEventListener("click", function () {
     document.getElementById("FilterCountMin").value = "";
     document.getElementById("FilterCountMax").value = "";
     minCount = undefined;

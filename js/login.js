@@ -26,4 +26,3 @@ function cerrar(){
     localStorage.clear()
     window.location="index.html";
 }
-
